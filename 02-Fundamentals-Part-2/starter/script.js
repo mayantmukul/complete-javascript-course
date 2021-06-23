@@ -6,6 +6,7 @@
 const compose = (f, g) => x => f(g(x))
 const reduce = f => arr => arr.reduce(f)
 const map = f => arr => arr.map(f)
+const combine = f => (xs, ys) => xs.map((val, idx) => f(val, ys[idx]))
 const curry = f => arg => data => f(arg, data)
 const uncurry = f => (arg, data) => f(arg)(data)
 const flip = f => (y, x) => f(x, y)
@@ -24,11 +25,39 @@ const None = x => ({
     fold: (f, g) => f(x)
 })
 
-// =============================================================
+/* =============================================================
 // Coding challenge #2
 
+const calculateTip = (bill) =>
+    (50 <= bill && bill <= 300) ? 0.15 * bill : 0.20 * bill
 
 
+const bills = [125, 555, 44]
+const tips = [
+    calculateTip(bills[0]),
+    calculateTip(bills[1]),
+    calculateTip(bills[2])
+]
+
+const totals = [
+    bills[0] + tips[0],
+    bills[1] + tips[1],
+    bills[2] + tips[2]
+]
+
+console.log(totals)
+
+// OR, a functional approach
+
+const calculateTip = bill =>
+    (50 <= bill && bill <= 300) ? 0.15 * bill : 0.20 * bill
+
+const calculateTotals = map(bill => bill + calculateTip(bill))
+
+const bills = [125, 555, 44]
+console.log(calculateTotals(bills))
+
+*/
 
 /* =============================================================
 // Coding Challenge #1
@@ -74,4 +103,4 @@ const k = average([65, 54, 49])
 
 console.log(checkWinner(d, k))
 
-============================================================= */
+*/
