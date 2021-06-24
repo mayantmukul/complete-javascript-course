@@ -26,6 +26,39 @@ const None = x => ({
 })
 
 /* =============================================================
+// Coding challenge #4
+
+const bills = []
+for (let i = 0; i < 10; ++i)
+    bills.push(Math.trunc(Math.random() * 500))
+
+const tips = []
+const totals = []
+
+const calculateTip = (bill) =>
+    (50 <= bill && bill <= 300) ? 0.15 * bill : 0.20 * bill
+
+const calculateAverage = (arr) => {
+    let sum = 0
+    for (let i = 0; i < arr.length; ++i) {
+        sum += arr[i]
+    }
+    return sum / arr.length
+}
+
+for (let i = 0; i < bills.length; ++i) {
+    const tip = calculateTip(bills[i])
+    tips.push(tip)
+    totals.push(bills[i] + tip)
+}
+
+console.log(bills, tips, totals)
+console.log(calculateAverage(totals))
+
+*/
+
+
+/* =============================================================
 // Coding challenge #3
 
 const mark = {
