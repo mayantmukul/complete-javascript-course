@@ -26,6 +26,43 @@ const None = x => ({
 })
 
 /* =============================================================
+// Coding challenge #3
+
+const mark = {
+    fullname: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    getBMI: function () {
+        if (!this.bmi) {
+            this.bmi = this.mass / (this.height * this.height)
+        }
+        return this.bmi
+    }
+}
+
+const john = {
+    fullname: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    getBMI: function () {
+        if (!this.bmi) {
+            this.bmi = this.mass / (this.height * this.height)
+        }
+        return this.bmi
+    }
+}
+
+if (john.getBMI() > mark.getBMI()) {
+    console.log(`John's BMI (${john.getBMI()}) is higher than Mark's (${mark.getBMI()})!`)
+} else {
+    console.log(`Mark's BMI (${mark.getBMI()}) is higher than John's (${john.getBMI()})!`)
+}
+
+*/
+
+/* =============================================================
 // Coding challenge #2
 
 const calculateTip = (bill) =>
